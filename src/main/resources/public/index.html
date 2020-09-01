@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<title>Página HTML</title>
+
+<script>
+function delayer(){
+    window.location = "menu.action"
+}
+</script>
+
+</head>
+<body onLoad="setTimeout('delayer()', 30000)">
+
+	<div class="container">
+
+	<div class="row alert alert-primary">
+		Você será redirecionado para a página incial em 30 segundos.
+	</div>
+	
+	<div class="alert alert-success">
+	  <h4 class="alert-heading">Projeto Spring Boot integrando com Struts2!</h4>
+	  <p>Esse projeto realiza uma integração entre Spring Boot e Struts2. 
+	  	Além disso, utiliza JDBC puro e disponibiliza um serviço SOAP e suas classes Client.
+	  <hr>
+	  <p class="mb-0">
+	  	Um outro recurso utilizado no projeto é o BootStrap para dar uma melhorada no visual das JSPs<BR/>
+	  	
+	  </p>
+	</div>
+	
+	<div class="row">
+		Redirecionando para a página principal..
+	</div>
+	
+	<div class="row mt-3">
+		<a href="menu.action" class="btn btn-primary">Clique aqui para redirecionar agora</a>
+	</div>
+	
+	</div>
+</body>
+</html>

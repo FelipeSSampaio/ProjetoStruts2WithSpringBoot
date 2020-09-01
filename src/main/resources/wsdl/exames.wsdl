@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://ws.exame.com.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.exame.com.br" targetNamespace="http://ws.exame.com.br">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ws.exame.com.br">
+
+    <xs:element name="getExameRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getExameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="exame" type="tns:exame"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="exame">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="nome" type="xs:string"/>
+            <xs:element name="status" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getExameResponse">
+    <wsdl:part element="tns:getExameResponse" name="getExameResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getExameRequest">
+    <wsdl:part element="tns:getExameRequest" name="getExameRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ExamePort">
+    <wsdl:operation name="getExame">
+      <wsdl:input message="tns:getExameRequest" name="getExameRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getExameResponse" name="getExameResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExamePortSoap11" type="tns:ExamePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getExame">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getExameRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getExameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExamePortService">
+    <wsdl:port binding="tns:ExamePortSoap11" name="ExamePortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

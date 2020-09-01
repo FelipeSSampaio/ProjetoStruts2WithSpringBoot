@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">  
+<struts>  
+
+<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+<constant name="struts.action.extension" value="action"/>
+<constant name="struts.devMode" value="true" />
+<constant name="struts.objectFactory" value="spring" />
+
+<package name="default" namespace="/" extends="struts-default">  
+
+	<action name="" >
+		<result name="">/menu.jsp</result>
+	</action> 
+
+	<action name="menu" class="br.com.exame.controller.MenuController">
+		<result name="success">/menu.jsp</result>
+	</action> 
+	
+	<action name="cadastraExame" class="br.com.exame.controller.MenuController" method="cadastraExame">  
+		<result name="success">/cadastraExame.jsp</result>
+	</action>
+	
+	<action name="alteraExame" class="br.com.exame.controller.MenuController" method="alteraExame">  
+		<result name="success">/alteraExame.jsp</result>
+	</action>
+	
+	<action name="exclueExame" class="br.com.exame.controller.MenuController" method="exclueExame">  
+		<result name="success">/exclueExame.jsp</result>
+	</action>
+	
+	<action name="pesquisaExame" class="br.com.exame.controller.MenuController" method="pesquisaExame">  
+		<result name="success">/pesquisaExame.jsp</result>
+	</action>
+	
+	<action name="cadastraExameForm" class="br.com.exame.controller.ExameController" method="cadastraExameForm">  
+		<result name="success">/cadastraExame.jsp</result>
+		<result name="erro">/erro.jsp</result>
+	</action>
+	
+	<action name="alteraExameForm" class="br.com.exame.controller.ExameController" method="alteraExameForm">  
+		<result name="success">/resultadoExame.jsp</result>
+		<result name="erro">/erro.jsp</result>
+	</action>
+	
+	<action name="exclueExameForm" class="br.com.exame.controller.ExameController" method="exclueExameForm">  
+		<result name="success">/menu.jsp</result>
+		<result name="erro">/erro.jsp</result>
+	</action>
+	
+	<action name="listaResultadoExame" class="br.com.exame.controller.ExameController" method="listaResultadoExame">  
+		<result name="success">/resultadoExame.jsp</result>
+		<result name="erro">/erro.jsp</result>
+	</action>
+	
+	<action name="listaTodosExames" class="br.com.exame.controller.ExameController" method="listaTodosExames">  
+		<result name="success">/listaExame.jsp</result>
+		<result name="erro">/erro.jsp</result>
+	</action>
+  
+</package>  
+</struts> 
