@@ -21,7 +21,7 @@ As JSPs que rodam na aplicação estão dentro de ```src/main/webapp```.
 
 Adicionei em ```src/main/resource```:
 
-1 - wsdl gerado pela aplicação
-2 - data.sql com as queries de create table e sequence
+1. wsdl gerado pela aplicação
+2. data.sql com as queries de create table e sequence
 
 As classes do client são geradas ao realizar um ```Update > Maven``` ou com Maven ```clean``` e ```install```.
